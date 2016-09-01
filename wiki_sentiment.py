@@ -3,8 +3,19 @@ import requests
 import json 
 from tokens import * 
 
-def get_sentiment_from_url(url='https://en.wikipedia.org/wiki/Monty_Python'):
+def get_one_url_from_wiki_search(word='Monty Python'):
+    url = "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + word + "&limit=1&namespace=0&format=json"
     r = requests.get(url)
+    content = json.loads(r.content)
+    try:
+        search = str(content[3][0])
+    except:
+        return 'https://en.wikipedia.org/wiki/Monty_Python' 
+
+    return search 
+
+def get_sentiment_from_url(search_url='https://en.wikipedia.org/wiki/Monty_Python'):
+    r = requests.get(search_url)
 
     soup = BeautifulSoup(r.text, "html.parser")
     l = soup.find_all('p')
@@ -19,10 +30,7 @@ def get_sentiment_from_url(url='https://en.wikipedia.org/wiki/Monty_Python'):
     r = requests.post(url, data=json.dumps(data), headers=headers)
 
     content = json.loads(r.content)
-    return content['documents'][0]['score'], str(h[0].text) 
-
-
-
+    return content['documents'][0]['score'], str(h[0].text), search_url  
 
 
 
