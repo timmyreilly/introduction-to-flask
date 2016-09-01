@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Tim Reilly{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Timmy Reilly</h1>
+</div>
+<div class="container-fluid">
+  <h1>My Resume</h1>
+  <p>I love coding and playing ultimate frisbee!</p> 
+  <img src="{{ url_for('static', filename='onesie.jpg') }}">
+</div>
+
+<div class="blog-footer">
+    <p>
+    <a href="http://twitter.com/timmyreilly" target="blank" class="center"> Twitter </a>
+    <a href="http://timmyreilly.com/" targer="blank"> | </a>
+    <a href="http://github.com/timmyreilly" target="blank" class="center"> Github </a>
+    </p> 
+</div> 
+{% endblock %}
