@@ -30,7 +30,5 @@ def search():
     return render_template('search.html', form=form, searchterm=session.get('searchterm'), number=session.get('sentiment'), titlearticle=session.get('titlearticle'), wikiUrl=session.get('wikiurl'))
 
 
-
-
 if __name__ == "__main__":
     app.run(debug=True)
