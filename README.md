@@ -8,7 +8,7 @@
 4. Create a virtual environment 
 5. Install flask 
 6. Run our flask project
-7. Checkout the next branch 
+7. Checkout the next bit of code  
 
 ## 1. Install Python
 
@@ -26,18 +26,37 @@ $ pip install virtualenv
 
 virtualenv wrappers make it easy to manage multiple environments and can make iterating on project easy. 
 
+
 [Windows](http://timmyreilly.azurewebsites.net/python-flask-windows-development-environment-setup/)
 
+``` 
+C:\ pip install virtualenvwrapper-win  
+```
+
+
 [Mac](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
+
+```
+$ pip install virtualenvwrapper 
+$ export WORKON_HOME=~/Envs 
+$ source /usr/local/bin/virtualenvwrapper.sh 
+```
 
 ## 4. Create a virtual environment
 
 ```
-$ mkvirtualenv helloworld
+$ mkvirtualenv venv
+```
+deavtivate environment
+```
+$ deavtivate 
+```
+workon that environment
+```
+$workon venv
 ```
 
-cd into root of project
-
+EXTRA: link directory to virtualenv 
 ```
 $ setprojectdir .
 
@@ -45,6 +64,13 @@ $ deactivate
 
 $ workon helloworld
 ```
+
+Before moving forward -  Make sure you're virtualenv is activated. Should look like this: 
+
+```
+(venv) path\to\something\like\your\project$ 
+```
+
 
 ## 5. Install flask
 
@@ -54,16 +80,18 @@ Now we need [flask](http://flask.pocoo.org/) for our first website!
 $ pip install flask
 ```
 
-
-## 6. Run our flask project
+## 6. Clone the repo 
 ```
-python hello.py
+$ git clone https://github.com/timmyreilly/introduction-to-flask.git 
+```
+
+## 7. Checkout our first section
+```
+$ git checkout a 
+```
+
+## 8. Run our flask project
+```
+$ python hello.py
  * Running on http://localhost:5000/
 ```
-
-## 7. Checkout the next branch
-```
-$ git pull origin hello 
-```
-
-## Now that you've setup your environment let's create our first template! 
