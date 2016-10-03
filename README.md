@@ -1,5 +1,7 @@
 #Intro to Flask 
 
+Supporting slides can be found [here](https://doc.co/E7UnqU)
+
 ### Before we get started buildling with flask we need to setup our development environment. 
 
 1. Install Python
