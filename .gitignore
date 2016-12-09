@@ -4,6 +4,8 @@ tokens.py
 __pycache__/
 *.pyc
 
+.vscode
+
 # PTVS analysis
 .ptvs/
 
